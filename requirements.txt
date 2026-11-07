@@ -1,0 +1,3 @@
+livekit-agents[anthropic,deepgram,silero]~=1.8
+livekit-api
+python-dotenv
