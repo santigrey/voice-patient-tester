@@ -31,6 +31,7 @@ LLM_MODEL = "claude-haiku-5-5"
 STT_MODEL = "nova-2"
 TTS_MODEL = "aura-2-thalia-en"
 CALLEE_IDENTITY = "callee"
+SILENCE_BEFORE_HELLO = 4.0  # seconds of quiet after answer before the bot says hello
 
 # Turn taking: Silero VAD decides when the other side is done; a short pause before replying
 # keeps the patient from talking over the clinic agent, and interruptions stay enabled.
@@ -102,6 +103,8 @@ async def entrypoint(ctx: JobContext) -> None:
         agent=Agent(instructions=build_instructions(scenario)),
         room=ctx.room,
         room_options=room_io.RoomOptions(participant_identity=CALLEE_IDENTITY),
+        # Keep the both-sides audio; nothing is sent to the cloud (traces, logs, transcript off).
+        record={"audio": True, "traces": False, "logs": False, "transcript": False},
     )
 
     end_reason = "callee-hung-up"
@@ -118,6 +121,13 @@ async def entrypoint(ctx: JobContext) -> None:
             )
         )
         answered_at["t0"] = time.time()
+        if scenario.proof:
+            # A friend picks up and waits, so the proof bot opens the conversation itself.
+            session.generate_reply(
+                instructions="Say your opening line now, as written in your instructions."
+            )
+        else:
+            asyncio.create_task(_say_hello_if_silent(session, lines))
         try:
             await asyncio.wait_for(callee_gone.wait(), timeout=config.MAX_CALL_SECONDS)
         except asyncio.TimeoutError:
@@ -140,6 +150,13 @@ async def entrypoint(ctx: JobContext) -> None:
     _write_transcript(call_dir, number, scenario.slug, to, lines)
     _write_meta(call_dir, number, scenario.id, to, end_reason, duration, sip_error)
     ctx.shutdown()
+
+
+async def _say_hello_if_silent(session: AgentSession, lines: list) -> None:
+    """A real caller says 'Hello?' if nobody speaks after the line is picked up."""
+    await asyncio.sleep(SILENCE_BEFORE_HELLO)
+    if not lines:
+        session.generate_reply(instructions="Nobody has spoken yet. Say a short 'Hello?' as a caller would.")
 
 
 def _collect_audio(ctx: JobContext, call_dir: Path, number: str) -> None:
