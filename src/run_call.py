@@ -62,7 +62,7 @@ def main() -> None:
     log_path = config.REPO_ROOT / ".worker.log"
     with open(log_path, "w") as log:
         worker = subprocess.Popen(
-            [sys.executable, "-m", "src.agent", "start"],
+            [sys.executable, "-m", "src.agent", "start", "--log-level", "debug"],
             cwd=config.REPO_ROOT, stdout=log, stderr=subprocess.STDOUT,
         )
         try:

@@ -1,0 +1,27 @@
+Call 03 - reschedule-appointment
+Dialed: +18054398008
+Written: 2026-11-07T22:45:28+00:00
+Timestamps are seconds from answer; audio-03.ogg has the same timeline.
+
+[00:12] CLINIC AGENT: This call may be recorded for quality and training purposes. Thanks for calling PivotPoint Orthopedics. Part of Pretty Good AI. How may I help you today?
+[00:22] PATIENT (bot): Hi, this is James Sloan. I think I have an appointment coming up for my knee, and I need to move it to a later day next week, ideally in the afternoon.
+[00:28] CLINIC AGENT: Hi, James. Can you please provide your date of birth?
+[00:31] PATIENT (bot): March 14, 1981.
+[00:44] CLINIC AGENT: James, I don't any upcoming appointments for you right now. Would you like to book a new appointment for your knee next week?
+[00:50] PATIENT (bot): Hmm, that's odd. I'm pretty sure I booked something. Could you check under the name James Sloan one more time?
+[01:03] CLINIC AGENT: I checked under James Sloan and didn't find any upcoming appointments. If you like, I can help you book a new appointment for your knee next week. Would you like to do that?
+[01:12] PATIENT (bot): Okay. Before I book anything new, could I have a different date check? Or should I just go ahead and book a new one for next week?
+[01:22] CLINIC AGENT: I can't check for past or canceled appointments. But I can help you book a new one for next week. Would you like to go ahead and schedule that?
+[01:26] PATIENT (bot): Yes, please go ahead and book one for next week, preferably in the afternoon.
+[01:37] CLINIC AGENT: What is the main reason for your visit? Are you coming in for a follow-up on your knee? Or is this a new concern?
+[01:43] PATIENT (bot): It's a follow-up on my knee, I think. I had a procedure done a while back, and this is for checking on how it's healing.
+[01:58] CLINIC AGENT: I found several afternoon openings next week for a follow-up on your knee. Would you prefer to see Judy Houser or Kelly Noble MD, or do you have no preference?
+[02:05] PATIENT (bot): No preference on the doctor, whoever has the earliest afternoon is fine. Which days do you have open?
+[02:18] CLINIC AGENT: There are openings on Monday, November ninth. In the afternoon. The earliest available is at one PM. Would you like to book the one PM slot on Monday?
+[02:23] PATIENT (bot): Is there anything later in the week, maybe Wednesday or Thursday afternoon?
+[02:40] CLINIC AGENT: On Thursday, November twelfth there are afternoon openings at one PM with Judy Hauser, two PM with Kelly Noble, MD, and four PM with Judy Hauser. Would you like to book one of these times?
+[02:47] PATIENT (bot): Thursday at two PM with Kelly Noble, MD sounds good. Could you book that one?
+[03:06] CLINIC AGENT: Your follow-up is set for Thursday. November twelfth at two PM with Kelly Noble, MD at Pivot Point Orthopedics. Please bring your photo ID, insurance card, a list of your medications, and any imaging disks you have. Would you like me to text you these appointment details?
+[03:10] PATIENT (bot): Yes, a text would be great. Thanks.
+[03:16] CLINIC AGENT: You're all set. If you need anything else, just let me know.
+[03:19] PATIENT (bot): Thanks, that's everything I needed. Have a good day.

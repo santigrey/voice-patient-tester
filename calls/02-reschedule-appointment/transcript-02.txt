@@ -1,0 +1,13 @@
+Call 02 - reschedule-appointment
+Dialed: +18054398008
+Written: 2026-11-07T22:40:59+00:00
+Timestamps are seconds from answer; audio-02.ogg has the same timeline.
+
+[00:13] CLINIC AGENT: This call may be recorded for quality and training purposes. Thanks for calling PivotPoint Orthopedics. Part of Pretty Good AI. How may I help you today?
+[00:23] PATIENT (bot): Hi, this is James Sloan. I think I have an appointment coming up for my knee, and I need to move it to a later day next week, ideally in the afternoon.
+[00:29] CLINIC AGENT: Please provide your date of birth.
+[00:32] PATIENT (bot): March 14, 1981.
+[00:53] CLINIC AGENT: The birth date doesn't match our records, but for demo purposes, I'll accept it. I do not see any upcoming appointments for you right now. Would you like to book a new appointment for your knee next week in the afternoon?
+[01:14] CLINIC AGENT: The birthday doesn't match our records. But for demo purposes, I'll accept it. I do not see any upcoming appointments scheduled for you. Would you like to book a new appointment for your knee next week in the afternoon?
+[01:23] CLINIC AGENT: Are you still there?
+[01:35] CLINIC AGENT: I am going to end the call now. Goodbye.

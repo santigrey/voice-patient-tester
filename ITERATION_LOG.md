@@ -38,3 +38,18 @@ Changed:
 - Hello fallback now checks whether any speech was heard, and waits 6 s.
 - Scenarios 02-10 added: reschedule, cancel, refill, hours and location, insurance, and four
   labelled edge cases (weekend booking, interruption, unclear request, two requests).
+
+## Call 02 - reschedule-appointment (bot stalled)
+Observed: after the clinic said it found no appointment and offered to book a new one, the
+bot never spoke again. The clinic asked twice, then "Are you still there?", then hung up.
+The audio confirms the bot's channel is silent from about 40 s on. The INFO log showed no
+error, so the cause is not known yet.
+Changed: every call now saves history.json (the full conversation, including tool calls)
+and the worker runs with debug logging, so a repeat of this stall can be diagnosed.
+
+## Call 03 - reschedule-appointment (retry)
+Observed: clean opening (the bot waited out the greeting), a full conversation, a booking
+for Thursday 2 PM, and the bot ended the call itself with the end_call tool. The bot
+invented a past knee procedure when asked the reason for the visit.
+Changed: the prompt now says not to invent medical history and to keep any improvised
+answer short and consistent.

@@ -191,7 +191,10 @@ async def entrypoint(ctx: JobContext) -> None:
         log.error("call failed: %s", sip_error)
 
     duration = time.time() - answered_at["t0"] if "t0" in answered_at else 0.0
+    history = session.history.to_dict()
     await session.aclose()
+    # Full conversation including tool calls, for debugging what the bot decided and why.
+    (call_dir / "history.json").write_text(json.dumps(history, indent=2, default=str) + "\n")
 
     # Hang up (ends the SIP leg if we are the one finishing) and collect the evidence.
     try:
