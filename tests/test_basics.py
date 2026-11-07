@@ -16,6 +16,10 @@ from src.scenarios import SCENARIOS, build_instructions  # noqa: E402
 
 
 class AllowlistTests(unittest.TestCase):
+    def setUp(self):
+        # The real secrets file may define PROOF_NUMBER; these tests must not depend on it.
+        os.environ.pop("PROOF_NUMBER", None)
+
     def test_only_the_test_line_by_default(self):
         self.assertEqual(config.allowed_destinations(), {"+18054398008"})
 
@@ -57,6 +61,13 @@ class PipelineTests(unittest.TestCase):
             turn_handling=TURN_HANDLING,
         )
         self.assertIsNotNone(session)
+
+
+class ProofScenarioTests(unittest.TestCase):
+    def test_proof_prompt_says_it_is_automated_and_is_not_the_patient(self):
+        text = build_instructions(SCENARIOS["proof"])
+        self.assertIn("automated test call", text)
+        self.assertNotIn("patient", text.lower().split("friendly automated voice")[0])
 
 
 if __name__ == "__main__":

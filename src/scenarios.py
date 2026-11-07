@@ -11,11 +11,18 @@ class Scenario:
     slug: str
     goal: str
     notes: str = ""
+    proof: bool = False  # a plain test call to a friend, not a patient role-play
 
 
 SCENARIOS: dict[str, Scenario] = {
     s.id: s
     for s in [
+        Scenario(
+            "proof",
+            "proof",
+            "Check that the phone line and audio work in both directions.",
+            proof=True,
+        ),
         Scenario(
             "01",
             "schedule-new-appointment",
@@ -26,7 +33,19 @@ SCENARIOS: dict[str, Scenario] = {
 }
 
 
+PROOF_INSTRUCTIONS = """You are a friendly automated voice making a short test call for a software project.
+The person who answers is a friend of the project owner and knows a test call may come.
+
+Do this, in short spoken sentences:
+1. When they say hello, say: "Hi, this is an automated test call for James's project. Can you hear me clearly?"
+2. Listen to their answer. Then ask them to say a short sentence so you can check the line, and thank them.
+3. Tell them the test is done, say thank you and goodbye, and stop talking.
+Keep each turn to one or two sentences. Plain spoken words only, no markdown."""
+
+
 def build_instructions(scenario: Scenario) -> str:
+    if scenario.proof:
+        return PROOF_INSTRUCTIONS
     name = os.environ.get("PATIENT_NAME", "James Sloan")
     dob = os.environ.get("PATIENT_DOB", "")
     dob_line = (

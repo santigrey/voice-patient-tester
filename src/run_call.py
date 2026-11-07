@@ -41,7 +41,7 @@ async def dispatch(scenario_id: str, to: str, number: str, call_dir: str) -> Non
 def main() -> None:
     config.load_env()
     ap = argparse.ArgumentParser()
-    ap.add_argument("scenario", choices=sorted(SCENARIOS))
+    ap.add_argument("scenario", nargs="?", default="01", choices=sorted(SCENARIOS))
     ap.add_argument("--proof", action="store_true", help="dial PROOF_NUMBER instead of the test line")
     args = ap.parse_args()
 
@@ -49,9 +49,14 @@ def main() -> None:
     if to not in config.allowed_destinations():
         raise SystemExit(f"{to} is not on the allowlist")
 
-    scenario = SCENARIOS[args.scenario]
-    number = f"{next_call_number():02d}"
-    call_dir = config.CALLS_DIR / f"{number}-{scenario.slug}"
+    scenario = SCENARIOS["proof" if args.proof else args.scenario]
+    if args.proof:
+        # Proof calls go to a friend, so they are kept out of the repo (see .gitignore).
+        number = f"{len(list(config.CALLS_DIR.glob('proof-*'))) + 1:02d}"
+        call_dir = config.CALLS_DIR / f"proof-{number}"
+    else:
+        number = f"{next_call_number():02d}"
+        call_dir = config.CALLS_DIR / f"{number}-{scenario.slug}"
     call_dir.mkdir(parents=True, exist_ok=True)
 
     log_path = config.REPO_ROOT / ".worker.log"
