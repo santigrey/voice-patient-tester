@@ -1,0 +1,13 @@
+{
+  "call": "01",
+  "scenario": "01",
+  "dialed": "+18054398008",
+  "presented_number": "+17142877767",
+  "llm": "claude-haiku-5-5",
+  "stt": "nova-2",
+  "tts": "aura-2-thalia-en",
+  "end_reason": "max-duration-hangup",
+  "duration_seconds": 240.0,
+  "sip_error": null,
+  "finished_utc": "2026-11-07T22:35:26+00:00"
+}

@@ -1,0 +1,43 @@
+Call 01 - schedule-new-appointment
+Dialed: +18054398008
+Written: 2026-11-07T22:35:26+00:00
+Timestamps are seconds from answer; audio-01.ogg has the same timeline.
+
+[00:06] CLINIC AGENT: This call may be recorded for quality and training purposes.
+[00:08] PATIENT (bot): Okay, thanks. Hi, I'm calling
+[00:09] CLINIC AGENT: You for calling
+[00:11] PATIENT (bot): Oh, sorry, I
+[00:12] CLINIC AGENT: You're welcome.
+[00:15] PATIENT (bot): Hi, sorry about that. I'm James
+[00:15] CLINIC AGENT: No prob.
+[00:18] PATIENT (bot): Hi, my name is James
+[00:18] CLINIC AGENT: No worries.
+[00:21] PATIENT (bot): I'm calling to book an
+[00:22] CLINIC AGENT: Hi, Jane.
+[00:27] PATIENT (bot): Oh, it's James, not Jane. I'm calling to book an appointment for my right knee.
+[00:39] CLINIC AGENT: Thanks for letting me know. James, would you like to create a demo patient profile so I can help you book your appointment? Just need your first and last name.
+[00:46] PATIENT (bot): James Sloan. And I'd like an appointment for my right knee, if possible sometime next week, ideally in the morning.
+[00:56] CLINIC AGENT: Let me get your profile set up, then I'll check for morning appointments next week for your right knee. A moment.
+[00:58] PATIENT (bot): Sure, take your time.
+[01:04] CLINIC AGENT: Your patient profile is set up, and your date of birth is July fourth two thousand for demo purposes. How can I help you today?
+[01:15] PATIENT (bot): Hold on, that's not right. My date of birth is [DOB redacted], so the July fourth, two thousand part is wrong. Could you fix that before we go on?
+[01:33] CLINIC AGENT: Thanks for clarifying your date of birth. This [DOB redacted]. Let's continue with booking your appointment for your right knee next week. Preferably in the morning. I'll check the schedule for available times.
+[01:40] PATIENT (bot): Thanks. Yes, that's right, [DOB redacted]. Do you have anything next week in the morning?
+[01:48] CLINIC AGENT: Let me check the schedule for morning appointment next week for your right knee. One moment.
+[01:52] PATIENT (bot): Sure, no problem. I'll wait.
+[02:02] CLINIC AGENT: Thank you for waiting. Look for available morning appointments for next week, and let you know what's open.
+[02:05] PATIENT (bot): Okay, great. What do you have open?
+[02:19] CLINIC AGENT: I've documented your request for a right knee appointment next week, boardings preferred. Our clinic support team will review it, and get back to you as soon as they can.
+[02:22] CLINIC AGENT: Is there anything else I can help you with today?
+[02:33] PATIENT (bot): Wait, so you didn't find any open times? I really need to get this booked. Can you tell me what morning slots are available next week, or can I get a callback with specific times?
+[02:47] CLINIC AGENT: I wasn't able to pull up available times directly, but I sent your request our clinic support team. They'll contact you soon with specific morning slots for next week and help you get booked.
+[02:53] CLINIC AGENT: If you'd like, I can also note that you prefer a callback with available times. Would you like me to have that?
+[03:00] PATIENT (bot): Yes, please do that. Can you make sure they know I'd like a morning slot next week, and what number should they call me on?
+[03:21] CLINIC AGENT: I have your number as seven one four two eight seven seven seven six Is that correct? I'll make sure the team knows you want a morning slot next week for your right knee. If that number is correct, I can connect you to our patient support team now so they can help you directly. Would you like me to do that?
+[03:34] PATIENT (bot): Yes, that number's right, but I'm not sure it's 714 287 7776. Could you read it back to me slowly? And yes, please connect me to them now if you can.
+[03:37] CLINIC AGENT: Either number is seven one four two eight seven seven seven six seven
+[03:42] PATIENT (bot): Sorry, I'm
+[03:46] CLINIC AGENT: If so, I'll connect you to our patient support team now so they can help you book your morning appointment for next week. Please stay on the line.
+[03:48] CLINIC AGENT: Transfer you now. Thank you.
+[03:53] CLINIC AGENT: Hello. You've reached the Pretty Good AI test line. Goodbye.
+[04:00] PATIENT (bot): Wait, hello? I'm still here. The line just went quiet, and I'm not sure I got a

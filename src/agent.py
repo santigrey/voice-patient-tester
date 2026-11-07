@@ -18,7 +18,17 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from livekit import api, rtc
-from livekit.agents import Agent, AgentServer, AgentSession, JobContext, JobProcess, cli, room_io
+from livekit.agents import (
+    Agent,
+    AgentServer,
+    AgentSession,
+    JobContext,
+    JobProcess,
+    RunContext,
+    cli,
+    function_tool,
+    room_io,
+)
 from livekit.plugins import anthropic, deepgram, silero
 
 from . import config
@@ -31,15 +41,24 @@ LLM_MODEL = "claude-haiku-5-5"
 STT_MODEL = "nova-2"
 TTS_MODEL = "aura-2-thalia-en"
 CALLEE_IDENTITY = "callee"
-SILENCE_BEFORE_HELLO = 4.0  # seconds of quiet after answer before the bot says hello
+SILENCE_BEFORE_HELLO = 6.0  # seconds of quiet after answer before the bot says hello
 
 # Turn taking: Silero VAD decides when the other side is done; a short pause before replying
 # keeps the patient from talking over the clinic agent, and interruptions stay enabled.
 TURN_HANDLING = {
     "turn_detection": "vad",
-    "endpointing": {"min_delay": 0.7},
-    "interruption": {"enabled": True},
+    # Call 01: replying after 0.7 s cut into the clinic's greeting. Wait a full second.
+    "endpointing": {"min_delay": 1.0},
+    # Call 01: two-word backchannels ("No prob", "No worries") stopped the bot mid-sentence.
+    # Only three or more words count as a real interruption, and a false one resumes.
+    "interruption": {
+        "enabled": True,
+        "min_words": 3,
+        "resume_false_interruption": True,
+        "false_interruption_timeout": 1.5,
+    },
 }
+QUIET_HANGUP_SECONDS = 15.0  # both sides silent this long = the line is dead, hang up
 
 
 def prewarm(proc: JobProcess) -> None:
@@ -47,6 +66,22 @@ def prewarm(proc: JobProcess) -> None:
 
 
 server = AgentServer(setup_fnc=prewarm)
+
+
+class PatientAgent(Agent):
+    """The patient, plus one tool so it can hang up like a real caller."""
+
+    def __init__(self, instructions: str, hangup: asyncio.Event) -> None:
+        super().__init__(instructions=instructions)
+        self._hangup = hangup
+
+    @function_tool
+    async def end_call(self, ctx: RunContext) -> str:
+        """Hang up the phone. Use it after you have said goodbye, or when the other side has
+        said goodbye or the line has gone dead."""
+        await ctx.wait_for_playout()
+        self._hangup.set()
+        return "Call ended."
 
 
 def _stamp(seconds: float) -> str:
@@ -78,6 +113,7 @@ async def entrypoint(ctx: JobContext) -> None:
         tts=deepgram.TTS(model=TTS_MODEL),
         vad=ctx.proc.userdata["vad"],
         turn_handling=TURN_HANDLING,
+        user_away_timeout=QUIET_HANGUP_SECONDS,
     )
 
     lines: list[tuple[float, str, str]] = []
@@ -93,6 +129,16 @@ async def entrypoint(ctx: JobContext) -> None:
         lines.append((time.time() - answered_at["t0"], who, text.strip()))
 
     callee_gone = asyncio.Event()
+    hangup = asyncio.Event()
+    heard = {"other_side": False}
+
+    @session.on("user_state_changed")
+    def _on_user_state(ev) -> None:  # noqa: ANN001
+        if ev.new_state == "speaking":
+            heard["other_side"] = True
+        elif ev.new_state == "away" and "t0" in answered_at:
+            log.info("line quiet for %ss, hanging up", QUIET_HANGUP_SECONDS)
+            hangup.set()
 
     @ctx.room.on("participant_disconnected")
     def _on_leave(p: rtc.RemoteParticipant) -> None:
@@ -100,7 +146,7 @@ async def entrypoint(ctx: JobContext) -> None:
             callee_gone.set()
 
     await session.start(
-        agent=Agent(instructions=build_instructions(scenario)),
+        agent=PatientAgent(build_instructions(scenario), hangup),
         room=ctx.room,
         room_options=room_io.RoomOptions(participant_identity=CALLEE_IDENTITY),
         # Keep the both-sides audio; nothing is sent to the cloud (traces, logs, transcript off).
@@ -127,10 +173,17 @@ async def entrypoint(ctx: JobContext) -> None:
                 instructions="Say your opening line now, as written in your instructions."
             )
         else:
-            asyncio.create_task(_say_hello_if_silent(session, lines))
-        try:
-            await asyncio.wait_for(callee_gone.wait(), timeout=config.MAX_CALL_SECONDS)
-        except asyncio.TimeoutError:
+            asyncio.create_task(_say_hello_if_silent(session, heard))
+        gone = asyncio.create_task(callee_gone.wait())
+        ended = asyncio.create_task(hangup.wait())
+        done, pending = await asyncio.wait(
+            {gone, ended}, timeout=config.MAX_CALL_SECONDS, return_when=asyncio.FIRST_COMPLETED
+        )
+        for t in pending:
+            t.cancel()
+        if ended in done and gone not in done:
+            end_reason = "bot-hung-up"
+        elif not done:
             end_reason = "max-duration-hangup"
     except api.SipCallError as e:
         end_reason = "call-failed"
@@ -152,10 +205,13 @@ async def entrypoint(ctx: JobContext) -> None:
     ctx.shutdown()
 
 
-async def _say_hello_if_silent(session: AgentSession, lines: list) -> None:
-    """A real caller says 'Hello?' if nobody speaks after the line is picked up."""
+async def _say_hello_if_silent(session: AgentSession, heard: dict) -> None:
+    """A real caller says 'Hello?' if nobody speaks after the line is picked up.
+
+    Call 01: this used to check for finished transcript lines, so it fired while the clinic
+    was still mid-greeting. It now checks whether any speech was heard at all."""
     await asyncio.sleep(SILENCE_BEFORE_HELLO)
-    if not lines:
+    if not heard["other_side"]:
         session.generate_reply(instructions="Nobody has spoken yet. Say a short 'Hello?' as a caller would.")
 
 
