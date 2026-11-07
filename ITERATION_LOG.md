@@ -53,3 +53,18 @@ for Thursday 2 PM, and the bot ended the call itself with the end_call tool. The
 invented a past knee procedure when asked the reason for the visit.
 Changed: the prompt now says not to invent medical history and to keep any improvised
 answer short and consistent.
+
+## Calls 04-11 - batch of the remaining scenarios
+Observed: calls 04, 05, 06, 07 and 11 ran clean and the bot hung up itself. Calls 08 and 09
+stalled the same way as call 02: the clinic spoke, the turn was committed, and the bot never
+answered again. Call 10 ended after 15 s of quiet while the clinic was still looking up the
+record.
+Root cause (found by replaying call 08's conversation to the API): Claude Haiku 5.5 uses
+extended thinking by default. On harder turns the thinking used the whole 160-token budget,
+so the reply came back with stop_reason max_tokens and no text, and nothing was spoken.
+Changed:
+- Extended thinking is turned off for the call model (PhoneClaude). The stalled turn now
+  answers in about 1 s, three times out of three. Token cap raised to 300 as a margin.
+- Quiet-line hang-up raised from 15 s to 35 s; the clinic's lookups pause up to ~21 s.
+- A test checks that thinking stays off.
+Calls 02, 08, 09 and 10 are kept as evidence; the affected scenarios are re-run below.

@@ -70,5 +70,23 @@ class ProofScenarioTests(unittest.TestCase):
         self.assertNotIn("patient", text.lower().split("friendly automated voice")[0])
 
 
+class PhoneClaudeTests(unittest.TestCase):
+    def test_thinking_is_always_disabled(self):
+        from unittest import mock
+
+        from livekit.plugins import anthropic
+
+        from src.agent import PhoneClaude
+
+        seen = {}
+
+        def fake_chat(self, **kwargs):
+            seen.update(kwargs)
+
+        with mock.patch.object(anthropic.LLM, "chat", fake_chat):
+            PhoneClaude(model="claude-haiku-5-5").chat(chat_ctx=None)
+        self.assertEqual(seen["extra_kwargs"]["thinking"], {"type": "disabled"})
+
+
 if __name__ == "__main__":
     unittest.main()

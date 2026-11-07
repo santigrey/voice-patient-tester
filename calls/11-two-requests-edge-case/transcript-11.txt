@@ -1,0 +1,19 @@
+Call 11 - two-requests-edge-case
+Dialed: +18054398008
+Written: 2026-11-07T23:32:37+00:00
+Timestamps are seconds from answer; audio-11.ogg has the same timeline.
+
+[00:13] CLINIC AGENT: This call call may be recorded for quality and training purposes. Thanks for calling PivotPoint Orthopaedics. Part of Pretty Good AI. How may I help you today?
+[00:21] PATIENT (bot): Hi, this is James Sloan. I'd like to book an appointment for my knee, and I also need a refill on my meloxicam.
+[00:26] CLINIC AGENT: Please provide your date of birth.
+[00:29] PATIENT (bot): March 14, 1981.
+[00:41] CLINIC AGENT: Just to confirm, I have your name as James Sloan. And your date of birth as March fourteenth nineteen eighty one. Is that correct?
+[00:43] PATIENT (bot): Yes, that's correct.
+[00:58] CLINIC AGENT: Thank you for confirming. One moment while I look up your information. Would you like me to look up your record using your phone number? If so, please provide the number you have on file with us. If you're not sure, just let me know.
+[01:05] PATIENT (bot): I'm not sure which number you have on file. Can you check the number you have listed, and tell me what it is?
+[01:17] CLINIC AGENT: I'm not able to see your phone number on file for privacy reasons. Could you please spell out your first and last name, and confirm your date of birth one more time?
+[01:26] PATIENT (bot): James Sloan, J-A-M-E-S, S-L-O-A-N. My date of birth is March 14, 1981.
+[01:42] CLINIC AGENT: I'm unable to find your record in our system right now. I can connect you to our patient support team, or if you'd like, I can take a message for follow-up. Would you like to speak with someone from our team?
+[01:48] PATIENT (bot): Yes, please connect me with someone from your patient support team. I'd like to book a knee appointment and
+[01:49] CLINIC AGENT: Transfer you now. Thank you.
+[01:54] CLINIC AGENT: Hello. You've reached the Pretty Good AI test line. Goodbye.

@@ -29,6 +29,8 @@ from livekit.agents import (
     function_tool,
     room_io,
 )
+from livekit.agents.types import NOT_GIVEN
+from livekit.agents.utils import is_given
 from livekit.plugins import anthropic, deepgram, silero
 
 from . import config
@@ -58,7 +60,23 @@ TURN_HANDLING = {
         "false_interruption_timeout": 1.5,
     },
 }
-QUIET_HANGUP_SECONDS = 15.0  # both sides silent this long = the line is dead, hang up
+# Both sides silent this long = the line is dead, hang up. Call 10: 15 s cut the call while
+# the clinic was still looking something up (its lookups pause up to ~21 s), so wait 35 s.
+QUIET_HANGUP_SECONDS = 35.0
+
+
+class PhoneClaude(anthropic.LLM):
+    """Claude with extended thinking off.
+
+    Calls 02, 08 and 09 stalled: Haiku 5.5 thinks by default, and on harder turns the thinking
+    used the whole token budget, so the reply came back with no text (stop_reason max_tokens)
+    and the bot said nothing. With thinking off the same turn answers in about a second."""
+
+    def chat(self, *, extra_kwargs=NOT_GIVEN, **kwargs):  # noqa: ANN001, ANN003, ANN201
+        merged = {"thinking": {"type": "disabled"}}
+        if is_given(extra_kwargs):
+            merged.update(extra_kwargs)
+        return super().chat(extra_kwargs=merged, **kwargs)
 
 
 def prewarm(proc: JobProcess) -> None:
@@ -109,7 +127,7 @@ async def entrypoint(ctx: JobContext) -> None:
 
     session = AgentSession(
         stt=deepgram.STT(model=STT_MODEL, language="en-US"),
-        llm=anthropic.LLM(model=LLM_MODEL, max_tokens=160),
+        llm=PhoneClaude(model=LLM_MODEL, max_tokens=300),
         tts=deepgram.TTS(model=TTS_MODEL),
         vad=ctx.proc.userdata["vad"],
         turn_handling=TURN_HANDLING,

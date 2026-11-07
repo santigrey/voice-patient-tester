@@ -1,0 +1,16 @@
+Call 06 - office-hours-and-location
+Dialed: +18054398008
+Written: 2026-11-07T23:00:23+00:00
+Timestamps are seconds from answer; audio-06.ogg has the same timeline.
+
+[00:12] CLINIC AGENT: This call may be recorded for quality and training purposes. For calling PivotPoint Orthopaedics. Part of Pretty Good AI. How may I help you today?
+[00:19] PATIENT (bot): Hi, good morning. I'm calling to ask a few questions about your office. What are your hours?
+[00:36] CLINIC AGENT: Dividpoint Orthopedics is open Monday, Tuesday, and Thursday. From nine AM to four PM, Wednesday from twelve PM to seven PM, and Friday from nine AM to twelve PM. Else can I help you?
+[00:48] PATIENT (bot): Thanks. So that's Monday, Tuesday, and Thursday nine to four, Wednesday noon to seven, and Friday nine to noon. Are you open on Saturdays?
+[00:56] CLINIC AGENT: That's right. We are not open on Saturdays. Is there anything else you'd like to know about the clinic?
+[01:01] PATIENT (bot): Okay, thanks. Could you tell me where the office is located and where I should park?
+[01:18] CLINIC AGENT: Our clinic is at one two three four Recovery Way, suite two hundred, Austin, Free patient parking is available in the surface lot in front of the building. Would you like directions? Or any other details?
+[01:39] CLINIC AGENT: The clinic is located at one two three four Recovery Way, suite two hundred, Austin, free patient parking is available in the surface lot right in front of the building. Let me know if you need anything else.
+[01:51] PATIENT (bot): Okay, so the address is 1234 Recovery Way, suite 200, in Austin, with free parking in the surface lot out front. Thanks, that's everything I needed.
+[02:00] CLINIC AGENT: Glad I could help. If you have any other questions, just give us a call. Have a great day.
+[02:02] PATIENT (bot): Thanks, you too. Goodbye.

@@ -1,0 +1,289 @@
+{
+  "items": [
+    {
+      "id": "item_f80509483678",
+      "type": "agent_handoff",
+      "new_agent_id": "patient_agent"
+    },
+    {
+      "id": "item_f344347c42f5",
+      "type": "agent_config_update",
+      "instructions": "You are James Sloan, a patient calling a clinic on the phone.\nYou are on a live phone call, so talk the way people really talk on the phone.\n\nYour goal for this call: Ask what the office hours are, whether they are open on Saturdays, and where the office is and where to park.\n\nHow to behave:\n- Keep every turn short, one or two sentences. Never read a list.\n- Say one thing at a time and let the other side answer before you add more.\n- Wait until the other person has finished speaking before you reply.\n- Answer what was asked. Give details only when you are asked for them.\n- Do not invent medical history. If asked something your goal does not cover, give a short,\n  ordinary answer and stay consistent with it.\n- If you are unsure or did not hear, ask them to repeat, as a real caller would.\n- Steer gently back to your goal if the conversation drifts.\n- If the person asks to verify who you are, your date of birth is March 14, 1981. Do not volunteer it.\n- If you hear a recorded notice (for example \"this call may be recorded\"), stay quiet and\n  wait for a person to greet you.\n- Short sounds like \"okay\" or \"no problem\" are not questions. Do not answer them.\n- When your goal is done, confirm the details back once, thank them and say goodbye, then\n  use the end_call tool.\n- If the other side says goodbye, the line goes quiet, or you have been stuck for several\n  turns, say a short goodbye and use the end_call tool.\n- Never use markdown, bullet points or stage directions. Plain spoken words only.",
+      "tools_added": [
+        "end_call"
+      ]
+    },
+    {
+      "id": "item_956104a8a319",
+      "type": "message",
+      "role": "user",
+      "content": [
+        "This call may be recorded for quality and training purposes. For calling PivotPoint Orthopaedics. Part of Pretty Good AI. How may I help you today?"
+      ],
+      "interrupted": false,
+      "transcript_confidence": 0.97509765,
+      "extra": {},
+      "metrics": {
+        "stt_metadata": {
+          "model_name": "nova-2",
+          "model_provider": "Deepgram"
+        },
+        "started_speaking_at": 1794092297.552681,
+        "stopped_speaking_at": 1794092309.4929678,
+        "transcription_delay": 0.33989405632019043,
+        "end_of_turn_delay": 1.0003509521484375,
+        "on_user_turn_completed_delay": 0.00036012500640936196
+      }
+    },
+    {
+      "id": "item_a3e660e654c0",
+      "type": "message",
+      "role": "assistant",
+      "content": [
+        "Hi, good morning. I'm calling to ask a few questions about your office. What are your hours?"
+      ],
+      "interrupted": false,
+      "extra": {},
+      "metrics": {
+        "started_speaking_at": 1794092311.7893388,
+        "stopped_speaking_at": 1794092317.240766,
+        "llm_node_ttft": 1.0353324999887263,
+        "llm_node_tps": 242.10922995356637,
+        "llm_node_ttfs": 1.1760761249897769,
+        "tts_node_ttfb": 0.11197866700240411,
+        "playback_latency": 0.0013167858123779297,
+        "e2e_latency": 2.2963709831237793,
+        "llm_metadata": {
+          "model_name": "claude-haiku-5-5",
+          "model_provider": "api.anthropic.com"
+        },
+        "tts_metadata": {
+          "model_name": "aura-2-thalia-en",
+          "model_provider": "Deepgram"
+        }
+      }
+    },
+    {
+      "id": "item_2dc48629cd3c",
+      "type": "message",
+      "role": "user",
+      "content": [
+        "Dividpoint Orthopedics is open Monday, Tuesday, and Thursday. From nine AM to four PM, Wednesday from twelve PM to seven PM, and Friday from nine AM to twelve PM. Else can I help you?"
+      ],
+      "interrupted": false,
+      "transcript_confidence": 0.9990234375,
+      "extra": {},
+      "metrics": {
+        "stt_metadata": {
+          "model_name": "nova-2",
+          "model_provider": "Deepgram"
+        },
+        "started_speaking_at": 1794092320.355687,
+        "stopped_speaking_at": 1794092333.344506,
+        "transcription_delay": 0.5032730102539062,
+        "end_of_turn_delay": 1.001296043395996,
+        "on_user_turn_completed_delay": 0.0006972090050112456
+      }
+    },
+    {
+      "id": "item_3ff242ddaa3c",
+      "type": "message",
+      "role": "assistant",
+      "content": [
+        "Thanks. So that's Monday, Tuesday, and Thursday nine to four, Wednesday noon to seven, and Friday nine to noon. Are you open on Saturdays?"
+      ],
+      "interrupted": false,
+      "extra": {},
+      "metrics": {
+        "started_speaking_at": 1794092335.5090828,
+        "stopped_speaking_at": 1794092345.521069,
+        "llm_node_ttft": 0.75555220899696,
+        "llm_node_tps": 239.51428619240713,
+        "llm_node_ttfs": 0.9167376669938676,
+        "tts_node_ttfb": 0.23688283300725743,
+        "playback_latency": 0.0009279251098632812,
+        "e2e_latency": 2.164576768875122,
+        "llm_metadata": {
+          "model_name": "claude-haiku-5-5",
+          "model_provider": "api.anthropic.com"
+        },
+        "tts_metadata": {
+          "model_name": "aura-2-thalia-en",
+          "model_provider": "Deepgram"
+        }
+      }
+    },
+    {
+      "id": "item_2965ede578a0",
+      "type": "message",
+      "role": "user",
+      "content": [
+        "That's right. We are not open on Saturdays. Is there anything else you'd like to know about the clinic?"
+      ],
+      "interrupted": false,
+      "transcript_confidence": 0.9993489666666666,
+      "extra": {},
+      "metrics": {
+        "stt_metadata": {
+          "model_name": "nova-2",
+          "model_provider": "Deepgram"
+        },
+        "started_speaking_at": 1794092348.055238,
+        "stopped_speaking_at": 1794092353.3432682,
+        "transcription_delay": 0.26682186126708984,
+        "end_of_turn_delay": 1.0005309581756592,
+        "on_user_turn_completed_delay": 0.0007113339961506426
+      }
+    },
+    {
+      "id": "item_86064de1846a",
+      "type": "message",
+      "role": "assistant",
+      "content": [
+        "Okay, thanks. Could you tell me where the office is located and where I should park?"
+      ],
+      "interrupted": false,
+      "extra": {},
+      "metrics": {
+        "started_speaking_at": 1794092354.457421,
+        "stopped_speaking_at": 1794092359.303675,
+        "llm_node_ttft": 0.5231102920079138,
+        "llm_node_tps": 451.3950950703033,
+        "llm_node_ttfs": 0.7419030840101186,
+        "tts_node_ttfb": 0.1004602079920005,
+        "playback_latency": 0.0010449886322021484,
+        "e2e_latency": 1.1141529083251953,
+        "llm_metadata": {
+          "model_name": "claude-haiku-5-5",
+          "model_provider": "api.anthropic.com"
+        },
+        "tts_metadata": {
+          "model_name": "aura-2-thalia-en",
+          "model_provider": "Deepgram"
+        }
+      }
+    },
+    {
+      "id": "item_bc879e37b10d",
+      "type": "message",
+      "role": "user",
+      "content": [
+        "Our clinic is at one two three four Recovery Way, suite two hundred, Austin, Free patient parking is available in the surface lot in front of the building. Would you like directions? Or any other details?"
+      ],
+      "interrupted": false,
+      "transcript_confidence": 0.997705088,
+      "extra": {},
+      "metrics": {
+        "stt_metadata": {
+          "model_name": "nova-2",
+          "model_provider": "Deepgram"
+        },
+        "started_speaking_at": 1794092362.753695,
+        "stopped_speaking_at": 1794092374.847218,
+        "transcription_delay": 0.41069889068603516,
+        "end_of_turn_delay": 1.0004608631134033,
+        "on_user_turn_completed_delay": 0.00018145900685340166
+      }
+    },
+    {
+      "id": "item_39e9041dc583",
+      "type": "message",
+      "role": "user",
+      "content": [
+        "The clinic is located at one two three four Recovery Way, suite two hundred, Austin, free patient parking is available in the surface lot right in front of the building. Let me know if you need anything else."
+      ],
+      "interrupted": false,
+      "transcript_confidence": 0.9207519599999999,
+      "extra": {},
+      "metrics": {
+        "stt_metadata": {
+          "model_name": "nova-2",
+          "model_provider": "Deepgram"
+        },
+        "started_speaking_at": 1794092383.9019222,
+        "stopped_speaking_at": 1794092395.8496041,
+        "transcription_delay": 0.22522783279418945,
+        "end_of_turn_delay": 1.0012428760528564,
+        "on_user_turn_completed_delay": 0.000495915999636054
+      }
+    },
+    {
+      "id": "item_d4962d573fbf",
+      "type": "message",
+      "role": "assistant",
+      "content": [
+        "Okay, so the address is 1234 Recovery Way, suite 200, in Austin, with free parking in the surface lot out front. Thanks, that's everything I needed."
+      ],
+      "interrupted": false,
+      "extra": {},
+      "metrics": {
+        "started_speaking_at": 1794092398.3441029,
+        "stopped_speaking_at": 1794092409.468102,
+        "llm_node_ttft": 1.1769938749930589,
+        "llm_node_tps": 663.4473434070649,
+        "llm_node_ttfs": 1.2168044589925557,
+        "tts_node_ttfb": 0.26884520800376777,
+        "playback_latency": 0.0002448558807373047,
+        "e2e_latency": 2.4944987297058105,
+        "llm_metadata": {
+          "model_name": "claude-haiku-5-5",
+          "model_provider": "api.anthropic.com"
+        },
+        "tts_metadata": {
+          "model_name": "aura-2-thalia-en",
+          "model_provider": "Deepgram"
+        }
+      }
+    },
+    {
+      "id": "item_fd282a6e0ca7",
+      "type": "message",
+      "role": "user",
+      "content": [
+        "Glad I could help. If you have any other questions, just give us a call. Have a great day."
+      ],
+      "interrupted": false,
+      "transcript_confidence": 0.9890136666666667,
+      "extra": {},
+      "metrics": {
+        "stt_metadata": {
+          "model_name": "nova-2",
+          "model_provider": "Deepgram"
+        },
+        "started_speaking_at": 1794092412.4023561,
+        "stopped_speaking_at": 1794092416.991837,
+        "transcription_delay": 0.254072904586792,
+        "end_of_turn_delay": 1.0009970664978027,
+        "on_user_turn_completed_delay": 0.0005537499964702874
+      }
+    },
+    {
+      "id": "item_7a5808b4bbba",
+      "type": "message",
+      "role": "assistant",
+      "content": [
+        "Thanks, you too. Goodbye."
+      ],
+      "interrupted": false,
+      "extra": {},
+      "metrics": {
+        "started_speaking_at": 1794092418.190048,
+        "stopped_speaking_at": 1794092419.8760278,
+        "llm_node_ttft": 0.5494699580012821,
+        "llm_node_tps": 724.4549379548827,
+        "llm_node_ttfs": 0.7526442920061527,
+        "tts_node_ttfb": 0.18544529100472573,
+        "playback_latency": 0.0010349750518798828,
+        "e2e_latency": 1.1982109546661377,
+        "llm_metadata": {
+          "model_name": "claude-haiku-5-5",
+          "model_provider": "api.anthropic.com"
+        },
+        "tts_metadata": {
+          "model_name": "aura-2-thalia-en",
+          "model_provider": "Deepgram"
+        }
+      }
+    }
+  ]
+}

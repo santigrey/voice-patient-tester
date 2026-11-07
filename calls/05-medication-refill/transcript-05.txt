@@ -1,0 +1,18 @@
+Call 05 - medication-refill
+Dialed: +18054398008
+Written: 2026-11-07T22:54:00+00:00
+Timestamps are seconds from answer; audio-05.ogg has the same timeline.
+
+[00:12] CLINIC AGENT: This call may be recorded for quality and training purposes. Thanks for calling PivotPoint Orthopedics. Part of Pretty Good ai. How may I help you today?
+[00:19] PATIENT (bot): Hi, this is James Sloan. I need a refill on my meloxicam, the 15 milligram, for my knee.
+[00:25] CLINIC AGENT: Please provide your date of birth.
+[00:27] PATIENT (bot): March 14, 1981.
+[00:43] CLINIC AGENT: The birth date doesn't match our records, but for demo purposes, I'll accept it. I don't see any medic on your chart that I can refill right now. If you need more help, just let me know.
+[00:49] PATIENT (bot): That's strange, my date of birth is March 14, 1981
+[01:06] CLINIC AGENT: I have your date of birth as March fourteenth nineteen eighty one. For demo purposes, I can continue. I still don't see any medications on your chart to refill at this time. If you'd like to speak with our support team, just let me know.
+[01:13] PATIENT (bot): Okay. The meloxicam was prescribed by one of your doctors for my knee. Could you check under that doctor's name?
+[01:30] CLINIC AGENT: I'm not able to look up medications by doctor's name. I can only see what's listed on your chart. And right now there aren't any medications available for refill. If you'd like, I can connect you to our patient support team for more help. Would you like to do that?
+[01:34] PATIENT (bot): Yes, please connect me to the support team.
+[01:39] CLINIC AGENT: Transferring you now. Thank you.
+[01:40] PATIENT (bot): Thanks.
+[01:45] CLINIC AGENT: Hello. You've reached the Pretty Good AI test line. Goodbye.

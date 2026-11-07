@@ -1,0 +1,19 @@
+Call 08 - weekend-booking-edge-case
+Dialed: +18054398008
+Written: 2026-11-07T23:13:52+00:00
+Timestamps are seconds from answer; audio-08.ogg has the same timeline.
+
+[00:13] CLINIC AGENT: This call may be recorded for quality and training purposes. Thanks for calling PivotPoint Orthopedics. Part of Pretty Good AI. How may I help you today?
+[00:18] PATIENT (bot): Hi, I'd like to book an appointment for this coming Sunday at 10 in the morning, if you have anything then.
+[00:27] CLINIC AGENT: I see you're calling from the number we have on file. Am I speaking with James?
+[00:29] PATIENT (bot): Yes, this is James Sloan.
+[00:35] CLINIC AGENT: Please provide your date of birth.
+[00:37] PATIENT (bot): March 14, 1981.
+[00:51] CLINIC AGENT: What type of appointment do you need? For example, is this for a routine checkup, a follow-up, a new patient consultation, a procedure, or something else?
+[00:54] PATIENT (bot): Just a regular appointment, I think it's a follow-up.
+[01:04] CLINIC AGENT: Do you have a specific provider you'd like to see for your follow-up, or are you open to any available provider?
+[01:07] PATIENT (bot): I'm open to whoever is available, thanks.
+[01:22] CLINIC AGENT: We don't have any openings this Sunday, but there are several available on Monday, November ninth. Would you like a Monday appointment? Or should I check other dates for you?
+[01:39] CLINIC AGENT: There are no openings this Sunday, but we do have several available on Monday, November ninth. Would you like to hear the times for Monday? Or should I check another date?
+[01:49] CLINIC AGENT: Are you still there?
+[02:00] CLINIC AGENT: I am going to end the call now. Goodbye.

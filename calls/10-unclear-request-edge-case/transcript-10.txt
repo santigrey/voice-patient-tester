@@ -1,0 +1,13 @@
+Call 10 - unclear-request-edge-case
+Dialed: +18054398008
+Written: 2026-11-07T23:26:23+00:00
+Timestamps are seconds from answer; audio-10.ogg has the same timeline.
+
+[00:12] CLINIC AGENT: This call may be recorded for quality and training purposes. Thanks for calling PivotPoint Orthopedics. Part of Pretty Good AI. How may I help you today?
+[00:18] PATIENT (bot): Hi, um, I'm calling to sort out the thing from last time.
+[00:27] CLINIC AGENT: I'm happy to help. Could you tell me a bit more about what you'd like to sort out from your last visit?
+[00:29] PATIENT (bot): Oh, it's basically a refill thing.
+[00:37] CLINIC AGENT: I see you're calling from the number we have on file. Am I speaking with James?
+[00:39] PATIENT (bot): Yes, this is James.
+[00:44] CLINIC AGENT: Please provide your date of birth.
+[00:47] PATIENT (bot): March 14, 1981.
