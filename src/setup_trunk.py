@@ -19,14 +19,14 @@ async def main() -> None:
     password = config.require("TELNYX_SIP_PASSWORD")
 
     async with api.LiveKitAPI() as lk:
-        existing = await lk.sip.list_sip_outbound_trunk(api.ListSIPOutboundTrunkRequest())
+        existing = await lk.sip.list_outbound_trunk(api.ListSIPOutboundTrunkRequest())
         for trunk in existing.items:
             if trunk.name == TRUNK_NAME:
                 print(f"Trunk already exists: {trunk.sip_trunk_id}")
                 _remember(trunk.sip_trunk_id)
                 return
 
-        trunk = await lk.sip.create_sip_outbound_trunk(
+        trunk = await lk.sip.create_outbound_trunk(
             api.CreateSIPOutboundTrunkRequest(
                 trunk=api.SIPOutboundTrunkInfo(
                     name=TRUNK_NAME,
