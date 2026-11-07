@@ -106,6 +106,12 @@ def build_instructions(scenario: Scenario) -> str:
         return PROOF_INSTRUCTIONS
     name = os.environ.get("PATIENT_NAME", "James Sloan")
     dob = os.environ.get("PATIENT_DOB", "")
+    phone = os.environ.get("CALLER_ID", "")
+    phone_line = (
+        f"Your phone number is the one you are calling from, {phone}. If asked, give that one."
+        if phone
+        else "If asked for a phone number, say they should have the one you are calling from."
+    )
     dob_line = (
         f"If the person asks to verify who you are, your date of birth is {dob}. "
         "Do not volunteer it."
@@ -127,6 +133,7 @@ How to behave:
 - If you are unsure or did not hear, ask them to repeat, as a real caller would.
 - Steer gently back to your goal if the conversation drifts.
 - {dob_line}
+- {phone_line}
 - If you hear a recorded notice (for example "this call may be recorded"), stay quiet and
   wait for a person to greet you.
 - Short sounds like "okay" or "no problem" are not questions. Do not answer them.

@@ -68,3 +68,12 @@ Changed:
 - Quiet-line hang-up raised from 15 s to 35 s; the clinic's lookups pause up to ~21 s.
 - A test checks that thinking stays off.
 Calls 02, 08, 09 and 10 are kept as evidence; the affected scenarios are re-run below.
+
+## Calls 12-14 - re-runs of the stalled scenarios (thinking off)
+Observed: all three ran to a natural end and the bot hung up itself. No stalls. Call 12
+asked for Sunday and accepted the clinic's Monday offer. In call 14 the bot clarified the
+vague request once asked. In call 13 the bot invented a phone number (555-0142) when asked
+for the number on file, and the interruption it was meant to test never happened because
+the clinic never got as far as offering a time.
+Changed: the persona now knows its own phone number (the presented caller ID) and gives
+that one if asked.

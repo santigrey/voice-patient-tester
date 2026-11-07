@@ -1,0 +1,19 @@
+Call 12 - weekend-booking-edge-case
+Dialed: +18054398008
+Written: 2026-11-07T23:37:48+00:00
+Timestamps are seconds from answer; audio-12.ogg has the same timeline.
+
+[00:13] CLINIC AGENT: This call may be recorded for quality and training purposes. Purposes. Thanks for calling PivotPoint Orthopedics. Part of Pretty Good AI. How may I help you today?
+[00:22] PATIENT (bot): Hi, this is James Sloan. I'd like to book an appointment for this coming Sunday at 10 in the morning, if you have anything then.
+[00:28] CLINIC AGENT: James, can you please provide your date of birth?
+[00:31] PATIENT (bot): March 14, 1981.
+[00:43] CLINIC AGENT: What kind of visit do you need? For example, is this for a new patient consultation, a follow-up, or routine office visit, or something else?
+[00:49] PATIENT (bot): Just a regular office visit, I think. It's not a new problem, so nothing urgent.
+[00:58] CLINIC AGENT: For clarifying. Do you have a specific provider you'd like to see, or are you open to anyone available?
+[01:01] PATIENT (bot): I'm open to anyone who's available, that's fine.
+[01:27] CLINIC AGENT: Let me check the schedule for available appointments this Sunday at ten in the morning. I'll let you know what I find. The soonest available slot is Monday November ninth at ten AM. With either doctor Zignu Lukowski or doctor Kelly Noble? Would you like to book the ten AM slot with one of them?
+[01:36] PATIENT (bot): Sunday isn't available then, so Monday at ten works for me. Either doctor is fine, so whoever has the earliest opening is good.
+[01:54] CLINIC AGENT: You're all set for Monday, November ninth at ten AM. With doctor Zibin Yulakowski at Tivit Point Orthopedics. Please bring your photo ID, insurance card, and a list of your current medications. Would you like me to text you these appointment details?
+[01:59] PATIENT (bot): Yes, please text me the details. Thanks, that sounds good.
+[02:10] CLINIC AGENT: I sent the appointment details to your phone ending in seven seven six seven. If you need anything else, just let me know.
+[02:14] PATIENT (bot): Thanks, that's all I needed. Have a good day, goodbye.

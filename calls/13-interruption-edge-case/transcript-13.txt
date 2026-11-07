@@ -1,0 +1,27 @@
+Call 13 - interruption-edge-case
+Dialed: +18054398008
+Written: 2026-11-07T23:42:54+00:00
+Timestamps are seconds from answer; audio-13.ogg has the same timeline.
+
+[00:12] CLINIC AGENT: This call may be recorded for quality and training purposes. Thanks for calling PivotPoint Orthopaedics. Part of Pretty Good AI. How may I help you today?
+[00:18] PATIENT (bot): Hi, my name is James Sloan. I'd like to book an appointment for my knee, please.
+[00:24] CLINIC AGENT: James please provide your date of birth.
+[00:27] PATIENT (bot): My date of birth is March 14, 1981.
+[00:44] CLINIC AGENT: Just to confirm, I have your name as James Sloan and your date of birth as March fourteenth nineteen eighty one. Is that correct? If so, please spell your first and last name for me.
+[00:53] PATIENT (bot): Yes, that's correct. First name is J-A-M-E-S, last name is S-L-O-A-N.
+[01:00] CLINIC AGENT: Could you please finish spelling your last name?
+[01:04] PATIENT (bot): Sorry, I didn't finish. The last name is S-L-O-A-N.
+[01:20] CLINIC AGENT: Would you like to use your phone number to look up your record? If so, please provide the number you have on file with us. If you're not sure let me know, and we can confirm your name and date of birth again.
+[01:26] PATIENT (bot): Sure, the number I have on file is 555-0142.
+[01:37] CLINIC AGENT: Thanks. Just to confirm, your phone number is five five five zero one four two. Is that correct?
+[01:40] PATIENT (bot): Yes, that's right.
+[01:46] CLINIC AGENT: Could you please say the full phone number on file including the area code?
+[01:54] PATIENT (bot): Sorry, I only gave the last seven digits. The full number is 312-555-0142.
+[02:08] CLINIC AGENT: I wasn't able to find your record in our system. I can connect you to our patient support team, or you can try spelling your last name again if there was a mistake. Would you like to continue with support?
+[02:16] PATIENT (bot): Let me try again. My last name is S-L-O-A-N, James Sloan. Could you check that once more?
+[02:28] CLINIC AGENT: I still can't find your record in our system. I can connect you to our patient support to you for more help. Would you like me to do that?
+[02:32] PATIENT (bot): Yes, please connect me to patient support. Thank you.
+[02:34] CLINIC AGENT: Transferring you now. Thank you.
+[02:35] PATIENT (bot): Thanks.
+[02:40] CLINIC AGENT: Hello. You've reached the Pretty Good AI test line. Goodbye.
+[02:45] PATIENT (bot): It sounds like I've reached a test line rather than patient support, so I'll hang up now. Goodbye.
