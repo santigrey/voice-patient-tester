@@ -2,14 +2,12 @@
 from __future__ import annotations
 
 import asyncio
-from pathlib import Path
 
 from livekit import api
 
 from . import config
 
 TRUNK_NAME = "voice-patient-tester-outbound"
-ENV_FILE = Path.home() / ".config" / "voice-patient-tester" / ".env"
 
 
 async def main() -> None:
@@ -20,11 +18,11 @@ async def main() -> None:
 
     async with api.LiveKitAPI() as lk:
         existing = await lk.sip.list_outbound_trunk(api.ListSIPOutboundTrunkRequest())
-        for trunk in existing.items:
-            if trunk.name == TRUNK_NAME:
-                print(f"Trunk already exists: {trunk.sip_trunk_id}")
-                _remember(trunk.sip_trunk_id)
-                return
+        trunk = next((t for t in existing.items if t.name == TRUNK_NAME), None)
+        if trunk:
+            print(f"Trunk already exists: {trunk.sip_trunk_id}")
+            _remember(trunk.sip_trunk_id)
+            return
 
         trunk = await lk.sip.create_outbound_trunk(
             api.CreateSIPOutboundTrunkRequest(
@@ -45,15 +43,10 @@ async def main() -> None:
 
 
 def _remember(trunk_id: str) -> None:
-    """Append the (non-secret) trunk id to the local env file if it is not already there."""
-    text = ENV_FILE.read_text() if ENV_FILE.is_file() else ""
-    if "LIVEKIT_SIP_TRUNK_ID=" in text and f"LIVEKIT_SIP_TRUNK_ID={trunk_id}" not in text:
-        lines = [ln for ln in text.splitlines() if not ln.startswith("LIVEKIT_SIP_TRUNK_ID=")]
-        text = "\n".join(lines) + "\n"
-    if f"LIVEKIT_SIP_TRUNK_ID={trunk_id}" not in text:
-        ENV_FILE.parent.mkdir(parents=True, exist_ok=True)
-        ENV_FILE.write_text(text + f"LIVEKIT_SIP_TRUNK_ID={trunk_id}\n")
-        print(f"Saved LIVEKIT_SIP_TRUNK_ID to {ENV_FILE}")
+    """Store the (non-secret) trunk id in the local env file, replacing any older one."""
+    lines = [ln for ln in config.ENV_FILE.read_text().splitlines() if not ln.startswith("LIVEKIT_SIP_TRUNK_ID=")]
+    config.ENV_FILE.write_text("\n".join([*lines, f"LIVEKIT_SIP_TRUNK_ID={trunk_id}"]) + "\n")
+    print(f"Saved LIVEKIT_SIP_TRUNK_ID to {config.ENV_FILE}")
 
 
 if __name__ == "__main__":

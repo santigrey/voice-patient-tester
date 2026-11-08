@@ -8,6 +8,8 @@ from dotenv import load_dotenv
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 CALLS_DIR = REPO_ROOT / "calls"
+# Secrets live outside the synced project folder, never inside it.
+ENV_FILE = Path(os.environ.get("VPT_ENV_FILE", Path.home() / ".config/voice-patient-tester/.env"))
 
 # The only number the bot may ever dial for a real test. Hardcoded on purpose.
 TEST_LINE = "+18054398008"
@@ -17,14 +19,7 @@ MAX_CALL_SECONDS = 240
 
 
 def load_env() -> None:
-    """Load secrets from outside the synced folder first, then a local .env."""
-    for candidate in (
-        os.environ.get("VPT_ENV_FILE"),
-        Path.home() / ".config" / "voice-patient-tester" / ".env",
-        REPO_ROOT / ".env",
-    ):
-        if candidate and Path(candidate).is_file():
-            load_dotenv(candidate, override=False)
+    load_dotenv(ENV_FILE, override=False)
 
 
 def allowed_destinations() -> set[str]:
@@ -39,5 +34,5 @@ def allowed_destinations() -> set[str]:
 def require(name: str) -> str:
     value = os.environ.get(name, "").strip()
     if not value:
-        raise SystemExit(f"Missing {name}. Add it to ~/.config/voice-patient-tester/.env")
+        raise SystemExit(f"Missing {name}. Add it to {ENV_FILE}")
     return value

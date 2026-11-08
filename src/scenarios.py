@@ -125,8 +125,7 @@ Your goal for this call: {scenario.goal}
 
 How to behave:
 - Keep every turn short, one or two sentences. Never read a list.
-- Say one thing at a time and let the other side answer before you add more.
-- Wait until the other person has finished speaking before you reply.
+- Say one thing at a time, and wait until the other person has finished before you reply.
 - Answer what was asked. Give details only when you are asked for them.
 - Do not invent medical history. If asked something your goal does not cover, give a short,
   ordinary answer and stay consistent with it.

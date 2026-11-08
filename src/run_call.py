@@ -12,6 +12,7 @@ import subprocess
 import sys
 import time
 from datetime import UTC, datetime
+from pathlib import Path
 
 from livekit import api
 
@@ -81,7 +82,7 @@ def main() -> None:
     print(result.read_text() if result.is_file() else "No call.json written; see .worker.log")
 
 
-def _wait_registered(log_path, worker, timeout: float = 45.0) -> None:  # noqa: ANN001
+def _wait_registered(log_path: Path, worker: subprocess.Popen, timeout: float = 45.0) -> None:
     start = time.time()
     while time.time() - start < timeout:
         if worker.poll() is not None:
@@ -92,7 +93,7 @@ def _wait_registered(log_path, worker, timeout: float = 45.0) -> None:  # noqa: 
     raise SystemExit("Worker did not register in time; see .worker.log")
 
 
-def _wait_done(call_dir, worker, timeout: float = config.MAX_CALL_SECONDS + 90) -> None:  # noqa: ANN001
+def _wait_done(call_dir: Path, worker: subprocess.Popen, timeout: float = config.MAX_CALL_SECONDS + 90) -> None:
     start = time.time()
     while time.time() - start < timeout:
         if (call_dir / "call.json").is_file() or worker.poll() is not None:
