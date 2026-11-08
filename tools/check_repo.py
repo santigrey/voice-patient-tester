@@ -3,6 +3,9 @@
 Fails (exit 1) if any real secret value from the local env file appears anywhere in git
 history, if an unexpected file is tracked, if a banned name appears outside the call
 transcripts, or if the repo is not private. Prints names only, never secret values.
+
+The names to keep out live in the local env file as BANNED_TERMS (comma-separated), so they
+never appear in the code itself.
 """
 from __future__ import annotations
 
@@ -21,7 +24,6 @@ ALLOWED = re.compile(
     r"^(src/|tests/|tools/|calls/\d{2}-[a-z0-9-]+/|\.gitignore$|\.env\.example$|requirements\.txt$"
     r"|pyproject\.toml$|[A-Z_]+\.md$)"
 )
-BANNED = re.compile(r"pretty ?good|pgai", re.IGNORECASE)
 
 
 def git(*args: str) -> str:
@@ -31,11 +33,17 @@ def git(*args: str) -> str:
 def main() -> int:
     failures: list[str] = []
 
-    secrets = {}
+    secrets: dict[str, str] = {}
+    banned_terms: list[str] = []
     for line in ENV_FILE.read_text().splitlines() if ENV_FILE.is_file() else []:
         key, _, value = line.partition("=")
         if key in SECRET_KEYS and value.strip():
             secrets[key] = value.strip()
+        elif key == "BANNED_TERMS":
+            banned_terms = [t.strip() for t in value.split(",") if t.strip()]
+    if not banned_terms:
+        failures.append("BANNED_TERMS is not set in the env file")
+    banned = re.compile("|".join(re.escape(t) for t in banned_terms) or "(?!)", re.IGNORECASE)
     revs = git("rev-list", "--all").split()
     for key, value in secrets.items():
         found = subprocess.run(["git", "grep", "-I", "-l", "-F", value, *revs], capture_output=True, text=True)
@@ -49,7 +57,7 @@ def main() -> int:
     for f in git("ls-files").splitlines():
         if f.startswith("calls/"):
             continue  # the clinic says its own name on the calls
-        if BANNED.search(f) or (Path(f).is_file() and BANNED.search(Path(f).read_text(errors="ignore"))):
+        if banned.search(f) or (Path(f).is_file() and banned.search(Path(f).read_text(errors="ignore"))):
             failures.append(f"banned name in {f}")
 
     visibility = subprocess.run(
