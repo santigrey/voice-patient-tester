@@ -101,3 +101,9 @@ timeline, history, call.json with latency). 11 bot replies, median end-to-end la
 max 1.88 s. The bot changed its mind mid-booking as the scenario asks, but it still did not
 talk over the clinic: the pipeline only speaks after the other side's turn ends, so a true
 barge-in would need a deliberate timed interjection. Recorded as a known limit.
+
+## Runbook and repeatable repo check
+The checks done by hand in the review are now a script, `tools/check_repo.py` (secrets in all
+of git history, tracked files, banned names, private visibility). It passes on the repo and
+was shown to fail when a planted value is present. `RUNBOOK.md` collects setup, how to verify
+a call, every failure hit so far with its cause and fix, and the pre-share checklist.

@@ -56,4 +56,5 @@ Scenarios live in `src/scenarios.py` (`01` to `10`); `python -m src.run_call 05`
 
 `src/agent.py` the caller · `src/scenarios.py` patient goals · `src/transcript.py` transcript and latency · `src/run_call.py` one-command
 runner · `src/setup_trunk.py` trunk setup · `ARCHITECTURE.md` · `DECISIONS.md` ·
-`ITERATION_LOG.md` · `BUG_REPORT.md`
+`ITERATION_LOG.md` · `BUG_REPORT.md` · `RUNBOOK.md` (run, verify, fix, pre-share checks) ·
+`tools/check_repo.py` (pre-share repo check)
