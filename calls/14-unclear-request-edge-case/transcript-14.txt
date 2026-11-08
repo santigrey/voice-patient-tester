@@ -1,20 +1,19 @@
 Call 14 - unclear-request-edge-case
 Dialed: +18054398008
 Written: 2026-11-07T23:46:50+00:00
-Timestamps are seconds from answer; audio-14.ogg has the same timeline.
+Times are mm:ss into audio-14.ogg, when each person started speaking.
 
-[00:12] CLINIC AGENT: This call may be recorded for quality and training purposes. Purposes. Thanks for calling PivotPoint Orthopedics. Part of Pretty Good AI. How may I help you today?
-[00:16] PATIENT (bot): Hi, yeah, I need to sort out the thing from last time.
-[00:25] CLINIC AGENT: I see you're calling from the number we have on file. Am I speaking with James?
-[00:27] PATIENT (bot): Yes, this is James.
-[00:31] CLINIC AGENT: Please provide your date of birth.
-[00:34] PATIENT (bot): March 14, 1981.
+[00:06] CLINIC AGENT: This call may be recorded for quality and training purposes. Purposes. Thanks for calling PivotPoint Orthopedics. Part of Pretty Good AI. How may I help you today?
+[00:19] PATIENT (bot): Hi, yeah, I need to sort out the thing from last time.
+[00:26] CLINIC AGENT: I see you're calling from the number we have on file. Am I speaking with James?
+[00:31] PATIENT (bot): Yes, this is James.
+[00:36] CLINIC AGENT: Please provide your date of birth.
+[00:38] PATIENT (bot): March 14, 1981.
 [00:45] CLINIC AGENT: The birthday you gave doesn't match our records, but for demo purposes, I'll accept it. What would you like help with from last time?
-[00:49] PATIENT (bot): Oh, sorry about that. I mean the refill I need from last time.
-[01:08] CLINIC AGENT: I don't see any medications on your chart that I can refill right now. If you think there's a mistake or need more help, me know if you'd like to speak with our patient support team.
-[01:14] PATIENT (bot): Hmm, okay. Could you check again? It was just a refill from my last visit, I think.
-[01:26] CLINIC AGENT: I checked again. But there still aren't any medications listed for a refill on your chart. Would you like to speak with our patient support team about this?
-[01:30] PATIENT (bot): Yes, please, that would be helpful. Thanks.
-[01:35] CLINIC AGENT: Transferring you now. Thank you.
-[01:37] PATIENT (bot): Thanks, appreciate it.
-[01:37] CLINIC AGENT: Hello.
+[00:52] PATIENT (bot): Oh, sorry about that. I mean the refill I need from last time.
+[01:06] CLINIC AGENT: I don't see any medications on your chart that I can refill right now. If you think there's a mistake or need more help, me know if you'd like to speak with our patient support team.
+[01:15] PATIENT (bot): Hmm, okay. Could you check again? It was just a refill from my last visit, I think.
+[01:24] CLINIC AGENT: I checked again. But there still aren't any medications listed for a refill on your chart. Would you like to speak with our patient support team about this?
+[01:34] PATIENT (bot): Yes, please, that would be helpful. Thanks.
+[01:40] CLINIC AGENT: Transferring you now. Thank you.
+[01:42] PATIENT (bot): Thanks, appreciate it.

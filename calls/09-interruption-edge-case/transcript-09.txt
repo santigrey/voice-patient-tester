@@ -1,24 +1,24 @@
 Call 09 - interruption-edge-case
 Dialed: +18054398008
 Written: 2026-11-07T23:21:02+00:00
-Timestamps are seconds from answer; audio-09.ogg has the same timeline.
+Times are mm:ss into audio-09.ogg, when each person started speaking.
 
-[00:13] CLINIC AGENT: This call may be recorded for quality and training purposes. Thanks for calling PivotPoint Orthopedics. Part of Pretty Good AI. How may I help you today?
-[00:16] PATIENT (bot): Hi, I'd like to book an appointment for my knee, please.
-[00:25] CLINIC AGENT: I see you're calling from the number we have on file. Am I speaking with James?
-[00:27] PATIENT (bot): Yes, this is James.
-[00:32] CLINIC AGENT: Please provide your date of birth.
-[00:35] PATIENT (bot): March 14, 1981.
-[00:48] CLINIC AGENT: What kind of appointment do you need for your knee? Is this a new injury? A follow-up, a routine check, or something else?
-[00:52] PATIENT (bot): It's a follow-up, I think. I've had some pain in it for a while now.
-[01:02] CLINIC AGENT: You have a specific provider you'd like to see for your follow-up, or are you open to anyone available?
-[01:04] PATIENT (bot): Anyone who's available is fine for now.
-[01:19] CLINIC AGENT: There are openings this Monday, November ninth. With Dougie Hauser and Kelly Noble, MD. Do you have a preference between those two, or should I offer the earliest available time?
-[01:25] PATIENT (bot): Oh, the earliest is fine, but actually, I'd rather see a different doctor if that's possible. Do you have anyone else?
-[01:44] CLINIC AGENT: The two providers with openings right now are Doogie Houser and Telly Noble. MD. If you'd like, I can check for other providers on later dates. Would you like me to look for a different doctor on a specific day or just the soonest available with someone else?
-[01:47] PATIENT (bot): Just the soonest available with someone else, please.
-[02:04] CLINIC AGENT: Right now, only Doogie Howser and Kelly Noble, MD have openings soon. None of the other providers have available slots in the next week. Would you like to book with one of them? Or should I check for later dates with other doctors?
-[02:27] CLINIC AGENT: At the moment, only Judy Houser and Kelly Noble MD, have openings in the next week. Of the other providers have available slots right now. Would you like to book with one of them, or should I check for later dates with a different provider?
-[02:36] CLINIC AGENT: Are you still there?
-[02:47] CLINIC AGENT: I going to end the call now. Goodbye.
-[02:50] PATIENT (bot): Okay, thanks anyway. Goodbye.
+[00:07] CLINIC AGENT: This call may be recorded for quality and training purposes. Thanks for calling PivotPoint Orthopedics. Part of Pretty Good AI. How may I help you today?
+[00:20] PATIENT (bot): Hi, I'd like to book an appointment for my knee, please.
+[00:27] CLINIC AGENT: I see you're calling from the number we have on file. Am I speaking with James?
+[00:32] PATIENT (bot): Yes, this is James.
+[00:36] CLINIC AGENT: Please provide your date of birth.
+[00:40] PATIENT (bot): March 14, 1981.
+[00:47] CLINIC AGENT: What kind of appointment do you need for your knee? Is this a new injury? A follow-up, a routine check, or something else?
+[00:55] PATIENT (bot): It's a follow-up, I think. I've had some pain in it for a while now.
+[01:03] CLINIC AGENT: You have a specific provider you'd like to see for your follow-up, or are you open to anyone available?
+[01:09] PATIENT (bot): Anyone who's available is fine for now.
+[01:15] CLINIC AGENT: There are openings this Monday, November ninth. With Dougie Hauser and Kelly Noble, MD. Do you have a preference between those two, or should I offer the earliest available time?
+[01:26] PATIENT (bot): Oh, the earliest is fine, but actually, I'd rather see a different doctor if that's possible. Do you have anyone else?
+[01:35] CLINIC AGENT: The two providers with openings right now are Doogie Houser and Telly Noble. MD. If you'd like, I can check for other providers on later dates. Would you like me to look for a different doctor on a specific day or just the soonest available with someone else?
+[01:51] PATIENT (bot): Just the soonest available with someone else, please.
+[01:58] CLINIC AGENT: Right now, only Doogie Howser and Kelly Noble, MD have openings soon. None of the other providers have available slots in the next week. Would you like to book with one of them? Or should I check for later dates with other doctors?
+[02:19] CLINIC AGENT: At the moment, only Judy Houser and Kelly Noble MD, have openings in the next week. Of the other providers have available slots right now. Would you like to book with one of them, or should I check for later dates with a different provider?
+[02:41] CLINIC AGENT: Are you still there?
+[02:50] CLINIC AGENT: I going to end the call now. Goodbye.
+[02:55] PATIENT (bot): Okay, thanks anyway. Goodbye.

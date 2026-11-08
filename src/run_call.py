@@ -11,7 +11,7 @@ import json
 import subprocess
 import sys
 import time
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 
 from livekit import api
 
@@ -25,7 +25,7 @@ def next_call_number() -> int:
 
 
 async def dispatch(scenario_id: str, to: str, number: str, call_dir: str) -> None:
-    room = f"call-{number}-{datetime.now(timezone.utc):%H%M%S}"
+    room = f"call-{number}-{datetime.now(UTC):%H%M%S}"
     async with api.LiveKitAPI() as lk:
         await lk.agent_dispatch.create_dispatch(
             api.CreateAgentDispatchRequest(

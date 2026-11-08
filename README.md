@@ -34,18 +34,26 @@ never kept in this folder and never committed.
 ```
 
 One command starts the worker, places the call, waits for it to end and stops the worker.
-Output lands in `calls/NN-scenario/`: `audio-NN.ogg` (both sides, left = clinic, right =
-patient bot), `transcript-NN.txt` and `call.json`.
+Output lands in `calls/NN-scenario/`:
+
+- `audio-NN.ogg` - both sides in one file, left channel = clinic, right channel = patient bot.
+- `transcript-NN.txt` - each turn stamped with mm:ss into the audio file.
+- `call.json` - outcome, duration, models used and reply latency (median and max).
+- `history.json` - the full conversation as the session saw it, including tool calls.
+
+Scenarios live in `src/scenarios.py` (`01` to `10`); `python -m src.run_call 05` runs one.
 
 ## Safety rails
 
 - The bot can only dial the one test line hardcoded in `src/config.py`. A second number is
   accepted only if you set `PROOF_NUMBER` yourself, for a single proof call.
 - Calls hang up after 240 seconds.
-- `python -m unittest discover -s tests -v` checks these rails offline.
+- The bot hangs up itself when the call is done, or after 35 s of silence on both sides.
+- `python -m unittest discover -s tests -v` checks these rails offline; `ruff check src tests`
+  lints (config in `pyproject.toml`).
 
 ## Files
 
-`src/agent.py` the caller · `src/scenarios.py` patient goals · `src/run_call.py` one-command
+`src/agent.py` the caller · `src/scenarios.py` patient goals · `src/transcript.py` transcript and latency · `src/run_call.py` one-command
 runner · `src/setup_trunk.py` trunk setup · `ARCHITECTURE.md` · `DECISIONS.md` ·
 `ITERATION_LOG.md` · `BUG_REPORT.md`

@@ -1,17 +1,17 @@
 Call 04 - cancel-appointment
 Dialed: +18054398008
 Written: 2026-11-07T22:47:54+00:00
-Timestamps are seconds from answer; audio-04.ogg has the same timeline.
+Times are mm:ss into audio-04.ogg, when each person started speaking.
 
-[00:12] CLINIC AGENT: This call may be recorded for quality and training purposes. Thanks for calling PivotPoint Orthopedics. Part of Pretty Good AI. How may I help you today?
+[00:06] CLINIC AGENT: This call may be recorded for quality and training purposes. Thanks for calling PivotPoint Orthopedics. Part of Pretty Good AI. How may I help you today?
 [00:19] PATIENT (bot): Hi, this is James Sloan. I need to cancel my knee appointment, my pain has gone away.
-[00:27] CLINIC AGENT: I see you're calling from the number we have on file. Am I speaking with James?
+[00:28] CLINIC AGENT: I see you're calling from the number we have on file. Am I speaking with James?
 [00:33] PATIENT (bot): Yes, this is James. My date of birth is March 14, 1981, if you need it.
-[00:53] CLINIC AGENT: Have an upcoming appointment on Thursday, November twelfth with Kelly Noble MD. Is this the knee appointment you want to cancel because your pain has gone away?
-[00:57] PATIENT (bot): Yes, that's the one. Thanks for confirming.
-[01:08] CLINIC AGENT: Your appointment on Thursday November twelfth with Kelly Noble MD has been canceled. Is there anything else I can help you with today?
-[01:13] PATIENT (bot): Yes, I wanted to ask whether there's a cancellation fee for canceling it.
+[00:49] CLINIC AGENT: Have an upcoming appointment on Thursday, November twelfth with Kelly Noble MD. Is this the knee appointment you want to cancel because your pain has gone away?
+[01:00] PATIENT (bot): Yes, that's the one. Thanks for confirming.
+[01:06] CLINIC AGENT: Your appointment on Thursday November twelfth with Kelly Noble MD has been canceled. Is there anything else I can help you with today?
+[01:14] PATIENT (bot): Yes, I wanted to ask whether there's a cancellation fee for canceling it.
 [01:21] CLINIC AGENT: There is no cancellation fee for canceling your appointment. Let me know if you have any other questions.
-[01:25] PATIENT (bot): Great, thanks for checking. That's all I needed. Have a good day.
-[01:31] CLINIC AGENT: You're all set. Have a great day.
-[01:32] PATIENT (bot): Thanks, you too. Goodbye.
+[01:27] PATIENT (bot): Great, thanks for checking. That's all I needed. Have a good day.
+[01:34] CLINIC AGENT: You're all set. Have a great day.
+[01:37] PATIENT (bot): Thanks, you too. Goodbye.

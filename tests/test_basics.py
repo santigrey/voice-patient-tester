@@ -88,5 +88,35 @@ class PhoneClaudeTests(unittest.TestCase):
         self.assertEqual(seen["extra_kwargs"]["thinking"], {"type": "disabled"})
 
 
+class TranscriptTests(unittest.TestCase):
+    HISTORY = {
+        "items": [
+            {"type": "message", "role": "user", "content": ["Hello, clinic."],
+             "metrics": {"started_speaking_at": 110.0}},
+            {"type": "function_call", "name": "end_call"},
+            {"type": "message", "role": "assistant", "content": ["Hi, I need an appointment."],
+             "metrics": {"started_speaking_at": 175.4, "e2e_latency": 1.2}},
+            {"type": "message", "role": "assistant", "content": ["Thanks, bye."],
+             "metrics": {"started_speaking_at": 190.0, "e2e_latency": 2.0}},
+        ]
+    }
+
+    def test_times_are_measured_from_the_recording_start(self):
+        from src.transcript import format_transcript, turns_from_history
+
+        text = format_transcript(["Call 99"], turns_from_history(self.HISTORY), 100.0)
+        self.assertIn("[00:10] CLINIC AGENT: Hello, clinic.", text)
+        self.assertIn("[01:15] PATIENT (bot): Hi, I need an appointment.", text)
+        self.assertNotIn("end_call", text)
+
+    def test_latency_summary(self):
+        from src.transcript import latency_summary
+
+        self.assertEqual(
+            latency_summary(self.HISTORY),
+            {"bot_replies": 2, "e2e_latency_median_s": 1.6, "e2e_latency_max_s": 2.0},
+        )
+
+
 if __name__ == "__main__":
     unittest.main()

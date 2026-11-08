@@ -77,3 +77,20 @@ for the number on file, and the interruption it was meant to test never happened
 the clinic never got as far as offering a time.
 Changed: the persona now knows its own phone number (the presented caller ID) and gives
 that one if asked.
+
+## Review before the write-up (code quality, repo, safety)
+Found and fixed:
+- Transcript times did not match the audio: they counted from the answer, but the recording
+  starts earlier, so the audio ran about 7 to 9 s ahead. Transcripts are now written from the
+  session history with each turn's start time measured from the recording start. Calls 03-14
+  were rebuilt the same way; the alignment was checked against the bot's own channel and is
+  within 0.35 s on every call. Calls 01-02 predate the history file, so their times were
+  shifted onto the audio timeline and are marked as approximate end-of-turn times.
+- call.json now records reply latency (median and max end-to-end, from the session metrics).
+- Any unexpected error now still writes call.json, history and the transcript instead of
+  losing the call; the hello timer is cancelled cleanly; call state lives in one small class.
+- Lint added (ruff, config in pyproject.toml); clean. 10 offline tests pass.
+- The proof number was removed from the local settings now that the proof call is done, so
+  the only dialable number is the test line.
+Repo checks: private; none of the real key values appear anywhere in git history; only the
+expected files are tracked; no birth date; proof calls are not tracked; one author.

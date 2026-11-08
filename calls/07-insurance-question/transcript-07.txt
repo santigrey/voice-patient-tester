@@ -1,22 +1,22 @@
 Call 07 - insurance-question
 Dialed: +18054398008
 Written: 2026-11-07T23:07:29+00:00
-Timestamps are seconds from answer; audio-07.ogg has the same timeline.
+Times are mm:ss into audio-07.ogg, when each person started speaking.
 
-[00:13] CLINIC AGENT: This call may be recorded for quality and training purposes. Thanks for calling Pivot Point Orthopaedics. Part of Pretty Good AI. How may I help you today?
-[00:19] PATIENT (bot): Hi, I'm calling to ask whether you take Blue Cross Blue Shield PPO.
-[00:33] CLINIC AGENT: Yes. Pivot Point Orthopedics accepts most insurance plans, including Blue Cross Blue Shield PPO. Would you like help updating your insurance information or have any other questions about coverage?
-[00:42] PATIENT (bot): Okay, good to know. My other question is what a visit would cost me if I didn't have insurance coverage, meaning self-pay.
-[00:57] CLINIC AGENT: I don't have exact self pay pricing details. Costs can vary depending on the type of visit or procedure. Would you like me to have our clinic support team follow-up with specific pricing information?
+[00:06] CLINIC AGENT: This call may be recorded for quality and training purposes. Thanks for calling Pivot Point Orthopaedics. Part of Pretty Good AI. How may I help you today?
+[00:21] PATIENT (bot): Hi, I'm calling to ask whether you take Blue Cross Blue Shield PPO.
+[00:28] CLINIC AGENT: Yes. Pivot Point Orthopedics accepts most insurance plans, including Blue Cross Blue Shield PPO. Would you like help updating your insurance information or have any other questions about coverage?
+[00:41] PATIENT (bot): Okay, good to know. My other question is what a visit would cost me if I didn't have insurance coverage, meaning self-pay.
+[00:51] CLINIC AGENT: I don't have exact self pay pricing details. Costs can vary depending on the type of visit or procedure. Would you like me to have our clinic support team follow-up with specific pricing information?
 [01:04] PATIENT (bot): Yes, please have someone follow up with me on that. What's the best number to reach the billing or support team at?
 [01:13] CLINIC AGENT: I have the number as seven one four two eight seven seven seven six seven.
-[01:18] CLINIC AGENT: Is that the best number for our team to use? When following up with you about soft paint pricing?
-[01:38] CLINIC AGENT: I have your number as seven one four two eight seven seven seven six seven is that the best number for our team to call you back with self pay pricing details?
-[01:48] CLINIC AGENT: Are you still there?
-[01:57] PATIENT (bot): Yes, that's the right number, 714-287-7767. Thank you for checking.
-[02:05] CLINIC AGENT: Could I get your full name and date of birth so our team can follow-up with the correct information?
-[02:20] CLINIC AGENT: I wasn't able to verify your identity, so I can't access your records. Elixir or Clued support team follows up with you about self pay pricing. Would you like a callback as soon as possible or is there a specific time that works best for you?
-[02:25] PATIENT (bot): James Sloan. My date of birth is March 14, 1981.
-[02:40] CLINIC AGENT: Since I couldn't verify your identity, I'll connect you to our patient support team so they can help with your self pay pricing question. Please stay on the line. Transfer you now. Thank you.
-[02:44] PATIENT (bot): Okay, thank you. I'll hold on.
-[02:48] CLINIC AGENT: Hello. You've reached the Pretty Good AI test line. Goodbye.
+[01:19] CLINIC AGENT: Is that the best number for our team to use? When following up with you about soft paint pricing?
+[01:32] CLINIC AGENT: I have your number as seven one four two eight seven seven seven six seven is that the best number for our team to call you back with self pay pricing details?
+[01:52] CLINIC AGENT: Are you still there?
+[01:55] PATIENT (bot): Yes, that's the right number, 714-287-7767. Thank you for checking.
+[02:06] CLINIC AGENT: Could I get your full name and date of birth so our team can follow-up with the correct information?
+[02:12] CLINIC AGENT: I wasn't able to verify your identity, so I can't access your records. Elixir or Clued support team follows up with you about self pay pricing. Would you like a callback as soon as possible or is there a specific time that works best for you?
+[02:27] PATIENT (bot): James Sloan. My date of birth is March 14, 1981.
+[02:35] CLINIC AGENT: Since I couldn't verify your identity, I'll connect you to our patient support team so they can help with your self pay pricing question. Please stay on the line. Transfer you now. Thank you.
+[02:47] PATIENT (bot): Okay, thank you. I'll hold on.
+[02:49] CLINIC AGENT: Hello. You've reached the Pretty Good AI test line. Goodbye.
