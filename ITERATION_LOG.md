@@ -118,3 +118,14 @@ a call, every failure hit so far with its cause and fix, and the pre-share check
   error paths, the hang-up logic and the comments citing calls stay as they are.
 - Live check (call 16): all four files written, median reply latency 1.68 s. The call ran
   to the 240 s cap mid-conversation, so the cap did its job.
+
+## Stage 4 - write-up
+- BUG_REPORT.md: eight findings in the clinic's agent (three high, four medium, one low), each
+  cited by call and second. Because the transcripts are our own speech-to-text, every quote
+  that turns on exact words was re-transcribed from the audio with a second model (Nova-3)
+  and matched; provider-name spelling differences were dropped as our transcription noise.
+- DECISIONS.md: STT, LLM, TTS, turn taking, phone network and latency, each with tradeoffs and
+  alternatives, and the measured latency (103 replies: median 1.54 s, p90 2.16 s, max 3.21 s).
+- ARCHITECTURE.md finished; WALKTHROUGH.md has the outlines for both videos and interview
+  points; README has a results summary.
+- The interruption limit is documented rather than built, by decision.
