@@ -1,0 +1,27 @@
+Call 15 - interruption-edge-case
+Dialed: +18054398008
+Written: 2026-11-08T00:10:29+00:00
+Times are mm:ss into audio-15.ogg, when each person started speaking.
+
+[00:06] CLINIC AGENT: This call may be recorded for quality and training purposes. Thanks for calling Pivot Point Orthopaedics. Part of Pretty Good AI. How may I help you today?
+[00:20] PATIENT (bot): Hi, I'd like to book an appointment for my knee, please.
+[00:26] CLINIC AGENT: I see you're calling from the number we have on file. Am I speaking with James?
+[00:31] PATIENT (bot): Yes, this is James Sloan.
+[00:36] CLINIC AGENT: Please provide your date of birth.
+[00:38] PATIENT (bot): March 14, 1981.
+[00:45] CLINIC AGENT: Thanks, James. Can you tell me a bit more about your knee issue? Is this a new problem? A follow-up from a previous visit? Or something else?
+[00:55] PATIENT (bot): It's a new problem, my knee has been bothering me for a little while now. I'd just like to get in and have it looked at.
+[01:03] CLINIC AGENT: Do you have a specific provider you'd like to see? Or are you open to the first available?
+[01:09] PATIENT (bot): Open to the first available is fine. Go ahead and find me a time.
+[01:17] CLINIC AGENT: There are openings this Monday, November ninth. With both doctor Zivigniewlikowski and doctor Kelly Noble. Do you have a preference between these two, or should I offer the earliest available slot?
+[01:31] PATIENT (bot): Actually, I'd rather see a different doctor if that's possible. Is there anyone else who has openings soon?
+[01:40] CLINIC AGENT: Right now, the only providers with opening soon are doctor Zibbigniew Lukasco and doctor Kelly Noble. None of the other doctors or nurse practitioners have available slots in the next week. Would you like to book with either of them, or should I check for later dates?
+[01:57] PATIENT (bot): Doctor Kelly Noble is fine, then. What time does she have on Monday?
+[02:04] CLINIC AGENT: Doctor Kelly Noble has openings on Monday, November November ninth at nine AM, nine fifteen AM, nine thirty AM, nine forty five AM, three fifteen PM, three thirty PM, and three forty five PM. Do you have a preferred time from these?
+[02:18] PATIENT (bot): Nine fifteen in the morning would be great.
+[02:23] CLINIC AGENT: Just to confirm, you'd like to book Monday, November ninth nine fifteen AM with doctor Kelly Noble for your new b problem. Is that correct?
+[02:32] PATIENT (bot): Yes, that's correct, for my knee. Thank you.
+[02:40] CLINIC AGENT: Your appointment is set for Monday, November ninth at nine fifteen AM with Doctor. Kelly Noble. At Pivot Point Orthopaedics. Please bring your photo ID, insurance card, a list of your current medications, and any imaging discs if you have them. Would you like me to text you these appointment details?
+[03:01] PATIENT (bot): Yes, please text me the details. Thanks for your help, have a good day.
+[03:09] CLINIC AGENT: You'll get a text with your appointment details soon. Take care.
+[03:13] PATIENT (bot): Thanks, you too. Goodbye.

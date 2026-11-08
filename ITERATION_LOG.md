@@ -94,3 +94,10 @@ Found and fixed:
   the only dialable number is the test line.
 Repo checks: private; none of the real key values appear anywhere in git history; only the
 expected files are tracked; no birth date; proof calls are not tracked; one author.
+
+## Call 15 - interruption edge case, live check of the reviewed code
+Observed: every output file was written by the new code (audio, transcript on the audio
+timeline, history, call.json with latency). 11 bot replies, median end-to-end latency 1.76 s,
+max 1.88 s. The bot changed its mind mid-booking as the scenario asks, but it still did not
+talk over the clinic: the pipeline only speaks after the other side's turn ends, so a true
+barge-in would need a deliberate timed interjection. Recorded as a known limit.
