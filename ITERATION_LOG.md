@@ -107,3 +107,14 @@ The checks done by hand in the review are now a script, `tools/check_repo.py` (s
 of git history, tracked files, banned names, private visibility). It passes on the repo and
 was shown to fail when a planted value is present. `RUNBOOK.md` collects setup, how to verify
 a call, every failure hit so far with its cause and fix, and the pre-share checklist.
+
+## Simplification pass (readability only, no behaviour change to any safety rail)
+- The secrets-file path was defined in three places; it is now one constant in config.
+- Removed the fallback that would read a .env inside the synced project folder: secrets only
+  ever come from the file outside it.
+- The trunk-id save rewrites the env file once instead of a two-branch patch.
+- Lint-suppression comments replaced by type hints; two overlapping persona rules merged.
+- Diff on src/: 17 lines added, 29 removed. Nothing else was worth changing: the call-evidence
+  error paths, the hang-up logic and the comments citing calls stay as they are.
+- Live check (call 16): all four files written, median reply latency 1.68 s. The call ran
+  to the 240 s cap mid-conversation, so the cap did its job.

@@ -1,0 +1,25 @@
+Call 16 - schedule-new-appointment
+Dialed: +18054398008
+Written: 2026-11-08T00:36:14+00:00
+Times are mm:ss into audio-16.ogg, when each person started speaking.
+
+[00:07] CLINIC AGENT: Call may be recorded for quality and training purposes. Thanks for calling PivotPoint Orthopedics. Part of Pretty Good AI. How may I help you today?
+[00:20] PATIENT (bot): Hi, I'd like to book an appointment for my right knee. It's been sore for about two weeks.
+[00:29] CLINIC AGENT: I see you're calling from the number we have on file. Am I speaking with James?
+[00:35] PATIENT (bot): Yes, this is James Sloan.
+[00:41] CLINIC AGENT: Please provide your date of birth.
+[00:43] PATIENT (bot): March 14, 1981.
+[00:51] CLINIC AGENT: For your right knee soreness, is this a new issue you want checked out? Or are you following up after a previous visit? This helps me pick the right appointment type.
+[01:00] PATIENT (bot): It's a new issue. I haven't been seen for it before.
+[01:06] CLINIC AGENT: Thanks for clarifying. Do you have a specific provider you'd like to see or are you open to the next available?
+[01:13] PATIENT (bot): I'm open to whoever's available. Mornings next week would be best for me.
+[01:26] CLINIC AGENT: You already have an office visit booked with doctor Zigniew Lukaskey on Monday, November ninth at ten AM at Pivot Point Orthopedics. Would you like to keep this appointment reschedule it, or discuss something else?
+[01:41] PATIENT (bot): Hmm, I didn't know about that one. I'd like to keep it, so please just confirm that's for my knee.
+[01:51] CLINIC AGENT: Your office visit with doctor Zagny Lukovsky is set for Monday, November ninth at ten AM. While I can't mark it as confirmed in the system, you are all set for your knee appointment. Is there anything else you'd like help with?
+[02:07] PATIENT (bot): Okay, so that's Monday, November ninth at ten AM with the doctor you just said. Is that appointment for my right knee specifically? I just want to make sure it's the same visit I'm calling about.
+[02:21] CLINIC AGENT: Your appointment on Monday, November ninth at ten AM with doctor Zigniew Lukasky is an office visit. While I can't see the specific reason listed, you can discuss your right knee concerns at that visit. If you want to add more details or update the reason, let me know, and I can help with that.
+[02:39] PATIENT (bot): Okay, I'd like the reason on that visit updated to my right knee soreness, then. Could you also check whether there's an earlier morning slot next week with any provider? I'd rather not wait until November if something's open sooner.
+[02:55] CLINIC AGENT: You have two appointments on Monday, November ninth one at nine fifteen AM with Doctor. Kelly Noble, and one at ten AM with Doctor. Zibbigniew Lukovsky. Would you like to move the ten AM visit with doctor Lukowski to an earlier morning slot? Or are you looking to reschedule the nine fifteen AM with doctor Noble?
+[03:18] PATIENT (bot): I'm not sure why there are two appointments, and I don't remember booking either one. Can you tell me which one is actually for my right knee? And I'd like to avoid having two visits, so I'd prefer the nine fifteen with Doctor Noble if that's the one for my knee.
+[03:35] CLINIC AGENT: Neither appointment lists specific reasons, so I can't see which one is for your right knee. If you'd like, I can update the nine fifteen AM visit with doctor Kelly Noble to note your right knee soreness and cancel the ten AM with doctor Lukovsky. Would you like me to do that?
+[03:51] PATIENT (bot): Yes, that works. Please update the nine fifteen with Doctor Noble for my right knee soreness, and cancel the ten AM with Doctor Lukovsky. Then please confirm the final appointment back to me.

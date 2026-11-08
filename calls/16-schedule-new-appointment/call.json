@@ -1,0 +1,18 @@
+{
+  "call": "16",
+  "scenario": "01",
+  "dialed": "+18054398008",
+  "presented_number": "+17142877767",
+  "llm": "claude-haiku-5-5",
+  "stt": "nova-2",
+  "tts": "aura-2-thalia-en",
+  "end_reason": "max-duration-hangup",
+  "duration_seconds": 240.0,
+  "error": null,
+  "latency": {
+    "bot_replies": 10,
+    "e2e_latency_median_s": 1.68,
+    "e2e_latency_max_s": 1.89
+  },
+  "finished_utc": "2026-11-08T00:36:14+00:00"
+}
