@@ -11,7 +11,7 @@ separate components. No speech-to-speech models and no hosted voice-agent platfo
 | Speech to text | Deepgram Nova-2 |
 | LLM | Claude Haiku 5.5 (Anthropic) |
 | Text to speech | Deepgram Aura-2 |
-| Turn taking | Silero VAD, 0.7 s pause, interruptions on |
+| Turn taking | Silero VAD, 1.0 s pause, interruptions on |
 | Phone network | LiveKit Cloud SIP outbound trunk to a Telnyx SIP connection |
 
 ## Results
@@ -63,5 +63,5 @@ Scenarios live in `src/scenarios.py` (`01` to `10`); `python -m src.run_call 05`
 
 `src/agent.py` the caller · `src/scenarios.py` patient goals · `src/transcript.py` transcript and latency · `src/run_call.py` one-command
 runner · `src/setup_trunk.py` trunk setup · `ARCHITECTURE.md` · `DECISIONS.md` ·
-`ITERATION_LOG.md` · `BUG_REPORT.md` · `WALKTHROUGH.md` · `RUNBOOK.md` (run, verify, fix, pre-share checks) ·
+`ITERATION_LOG.md` · `BUG_REPORT.md` · `RUNBOOK.md` (run, verify, fix, pre-share checks) ·
 `tools/check_repo.py` (pre-share repo check)
